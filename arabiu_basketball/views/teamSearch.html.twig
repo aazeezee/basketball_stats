@@ -1,0 +1,42 @@
+{# teamSearch.html.twig
+
+	This file provides the template to allow a user to search for players, teams, and games.
+	It uses the form template and then displays results of the search on the same page.
+	The results will be displayed as a table with either the player's full biographical info and stats, a team's information, or the details of a specific game.  
+	
+#}
+
+{% include 'header.twig' %}
+<style>
+	table, tr, th, td { border: 1px solid red !important; }
+	td, th {padding: .4em;}
+		
+</style>
+
+<h1>Search by team name or city</h1>
+
+{{form_start(form)}}
+{{form_widget(form)}}
+{{form_end(form)}}
+
+<h3>Team Results</h3>
+{% if results %}
+	<table style="text-align: center;">
+		<tr>
+		<th class="teamID">Team ID</th>
+		<th class="name">Name</th>
+		<th class="city">City</th>
+		</tr>
+	{% for item in results %}
+		<tr>
+		<td class="teamID">{{ item.teamID }}<br>
+		<a href="/basketball/team/{{ item.teamID }}">Details</a></td>
+		<td class="name">{{ item.name }}</td>
+		<td class="city">{{ item.city }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endif %}
+
+
+{% include 'footer.twig' %}

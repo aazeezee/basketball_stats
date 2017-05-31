@@ -1,0 +1,71 @@
+{# search.html.twig
+
+	This file provides the template to allow a user to search for players, teams, and games.
+	It uses the form template and then displays results of the search on the same page.
+	The results will be displayed as a table with either the player's full biographical info and stats, a team's information, or the details of a specific game.  
+	
+#}
+
+{% include 'header.twig' %}
+<style>
+	table, tr, th, td { border: 1px solid red !important; }
+	td, th {padding: .4em;}
+		
+</style>
+
+<h1>Search by player name or team</h1>
+
+{{form_start(form)}}
+{{form_widget(form)}}
+{{form_end(form)}}
+
+<h3>Player Results</h3>
+{% if results %}
+	<table style="text-align: center;">
+		<tr>
+		<th class="playerID">Player ID</th>
+		<th class="fname">First Name</th>
+		<th class="lname">Last Name</th>
+		<th class="position">Position</th>
+		<th class="team">Team</th>
+		</tr>
+	{% for item in results %}
+		<tr>
+		<td class="playerID">{{ item.playerID }}<br>
+		<a href="/basketball/item/{{ item.playerID }}">Details</a></td>
+		<td class="fname">{{ item.fname }}</td>
+		<td class="lname">{{ item.lname }}</td>
+		<td class="position">{{ item.position }}</td>
+		<td class="team">{{ item.team }}<br>
+		<a href="/basketball/team/{{ item.teamID }}">Details</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endif %}
+
+
+{#
+<h3>Team Results</h3>
+{% if teamResults %}
+	<table style="text-align: center;">
+		<tr>
+		<th class="teamID">Team ID</th>
+		<th class="name">Name</th>
+		<th class="city">City</th>
+		<th class="record">Record</th>
+		</tr>
+	{% for teamItem in teamResults %}
+		<tr>
+		<td class="teamID">{{ teamItem.teamID }}<br>
+		<a href="/basketball/item/{{ teamItem.teamID }}">Details</a></td>
+		<td class="name">{{ teamItem.name }}</td>
+		<td class="city">{{ teamItem.city }}</td>
+		<td class="record">{{ teamItem.record }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endif %}
+#}
+
+
+{% include 'footer.twig' %}

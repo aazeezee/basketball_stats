@@ -1,0 +1,41 @@
+{# teamItem.html.twig
+
+	This file provides the template for displaying a details for a particular team
+	in the database. It sets up the table style, and then builds the html code
+	for the table of information about the team.
+#}
+
+{% include 'header.twig' %}
+<style>
+table, tr, th, td { border: 0px !important; }
+td, th {padding: .4em;}
+.attr { font-weight: bold; }
+</style>
+
+{% if results %}
+<h1>Details for the {{results[0].name}}</h1>
+
+<table>
+<tr>
+<td class="attr">Name</td>
+<td class="value">{{results[0].name}}</td>
+</tr><tr>
+<td class="attr">City</td>
+<td class="value">{{results[0].city}}</td>
+</tr><tr>
+<td class="attr">Arena</td>
+<td class="value">{{results[0].arena}}</td>
+</tr><tr>
+<td class="attr">Regular Season Record (W-L)</td>
+<td class="value">{{results[0].record}}</td>
+</tr><tr>
+<td class="attr">Head Coach</td>
+<td class="value">{{results[0].coach}}</td>
+
+</tr>
+<table>
+
+
+{% endif %}
+
+{% include 'footer.twig' %}

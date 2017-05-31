@@ -1,0 +1,43 @@
+{# gameItem.html.twig
+
+	This file provides the template for displaying a details for a particular game
+	in the database. It sets up the table style, and then builds the html code
+	for the table of information about the game.
+#}
+
+{% include 'header.twig' %}
+<style>
+table, tr, th, td { border: 0px !important; }
+td, th {padding: .4em;}
+.attr { font-weight: bold; }
+</style>
+
+{% if results %}
+<h1>Details for Game between {{results[0].awayteamID}} and {{results[0].hometeamID}} on {{results[0].date}}</h1>
+
+<table>
+<tr>
+<td class="attr">Date</td>
+<td class="value">{{results[0].date}}</td>
+</tr><tr>
+<td class="attr">Arena</td>
+<td class="value">{{results[0].arena}}</td>
+</tr><tr>
+<td class="attr">Away Team</td>
+<td class="value">{{results[0].awayteam}}</td>
+</tr><tr>
+<td class="attr">Score</td>
+<td class="value">{{results[0].awayscore}}</td>
+</tr><tr>
+<td class="attr">Home Team</td>
+<td class="value">{{results[0].hometeam}}</td>
+</tr><tr>
+<td class="attr">Score</td>
+<td class="value">{{results[0].homescore}}</td>
+</tr>
+<table>
+
+
+{% endif %}
+
+{% include 'footer.twig' %}

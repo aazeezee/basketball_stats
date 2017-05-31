@@ -1,0 +1,8 @@
+[02-May-2017 07:54:19 America/New_York] PHP Warning:  PDOStatement::execute() expects parameter 1 to be array, string given in /home/arabiu/public_html/basketball/index.php on line 104
+[02-May-2017 07:54:33 America/New_York] PHP Warning:  PDOStatement::execute() expects parameter 1 to be array, string given in /home/arabiu/public_html/basketball/index.php on line 104
+[02-May-2017 07:45:40 America/Chicago] PHP Parse error:  syntax error, unexpected 'like' (T_STRING) in /home/arabiu/public_html/basketball/index.php on line 185
+[02-May-2017 07:45:46 America/Chicago] PHP Parse error:  syntax error, unexpected 'like' (T_STRING) in /home/arabiu/public_html/basketball/index.php on line 185
+[02-May-2017 07:52:54 America/Chicago] PHP Parse error:  syntax error, unexpected ''results'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/arabiu/public_html/basketball/index.php on line 199
+[02-May-2017 07:58:43 America/Chicago] PHP Parse error:  syntax error, unexpected ''teamResults'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/arabiu/public_html/basketball/index.php on line 207
+[02-May-2017 22:02:13 America/Chicago] PHP Parse error:  syntax error, unexpected '' '' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/arabiu/public_html/basketball/index.php on line 142
+[03-May-2017 15:30:13 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/arabiu/public_html/basketball/index.php on line 242

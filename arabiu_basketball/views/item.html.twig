@@ -1,0 +1,78 @@
+{# item.html.twig
+
+	This file provides the template for displaying a details for a particular player, game or team
+	in the database.  It sets up the table style, and then builds the html code
+	for the table of information about the item.
+#}
+
+{% include 'header.twig' %}
+<style>
+table, tr, th, td { border: 0px !important; }
+td, th {padding: .4em;}
+.attr { font-weight: bold; }
+</style>
+
+
+{% if results %}
+<h1>Details for {{results[0].fname}} {{results[0].lname}}</h1>
+
+<table>
+<tr>
+<td class="attr">First Name</td>
+<td class="value">{{results[0].fname}}</td>
+</tr><tr>
+<td class="attr">Last Name</td>
+<td class="value">{{results[0].lname}}</td>
+</tr><tr>
+<td class="attr">Date of Birth</td>
+<td class="value">{{results[0].dob}}</td>
+</tr><tr>
+<td class="attr">Height (in)</td>
+<td class="value">{{results[0].height}}</td>
+</tr><tr>
+<td class="attr">Weight (lbs)</td>
+<td class="value">{{results[0].weight}}</td>
+
+</tr><tr>
+<td class="attr">Position</td>
+<td class="value">{{results[0].position}}</td>
+
+</tr><tr>
+<td class="attr">Team</td>
+<td class="value">{{results[0].team}}</td>
+
+</tr><tr>
+<td class="attr">Minutes per game</td>
+<td class="value">{{results[0].mpg}}</td>
+
+</tr><tr>
+<td class="attr">Points per game</td>
+<td class="value">{{results[0].ppg}}</td>
+
+</tr><tr>
+<td class="attr">Rebounds per game</td>
+<td class="value">{{results[0].rpg}}</td>
+
+</tr><tr>
+<td class="attr">Assists per game</td>
+<td class="value">{{results[0].apg}}</td>
+
+</tr><tr>
+<td class="attr">Steals per game</td>
+<td class="value">{{results[0].spg}}</td>
+
+</tr><tr>
+<td class="attr">Blocks per game</td>
+<td class="value">{{results[0].bpg}}</td>
+
+</tr><tr>
+<td class="attr">Field Goal percentage</td>
+<td class="value">{{results[0].fg}}</td>
+
+</tr>
+<table>
+
+{% endif %}
+
+
+{% include 'footer.twig' %}

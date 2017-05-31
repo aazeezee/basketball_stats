@@ -1,0 +1,16 @@
+{# home.twig
+
+	This file creates the template for the Home page of the Basketball Stats application.
+	It includes the header.twig.
+#}
+
+{% include 'header.twig' with { 'pageTitle' : pageTitle}  %}
+
+<br><h3>
+  
+	<a href="/basketball/search">Search Player Statistics</a><br>
+	<a href="/basketball/teamSearch">Search Team Info</a><br>
+	<a href="/basketball/gameSearch">Search Games</a><br>
+</h3>
+
+{% include 'footer.twig' %}
